@@ -116,10 +116,10 @@ def create_query(user_query, filters, sort="_score", sortDir="desc"):
                     "bool": {
                         "must": [
                             {
-                                "multi_match": {
+                                "query_string": {
                                     "query": user_query,
                                     "fields": ["name", "shortDescription", "longDescription"],
-                                    "slop": 3
+                                    "phrase_slop": 3
                                 }
                             }
                         ],
