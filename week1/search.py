@@ -94,7 +94,7 @@ def query():
 
     #### Step 4.b.ii
     response = opensearch.search(query_obj,
-                                 index="product_index")  # None   # TODO: Replace me with an appropriate call to OpenSearch
+                                 index="bbuy_products")
     # Postprocess results here if you so desire
 
     # print(response)

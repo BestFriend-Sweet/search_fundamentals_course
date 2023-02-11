@@ -118,7 +118,7 @@ def index_file(file, index_name):
         #### Step 2.b: Create a valid OpenSearch Doc and bulk index 2000 docs at a time
         the_doc = {
             '_op_type': 'index',
-            '_index': 'index-name',
+            '_index': index_name,
             '_type': 'document',
             '_id': doc["productId"],
             'doc': doc
