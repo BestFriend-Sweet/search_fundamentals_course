@@ -125,7 +125,38 @@ def create_query(user_query, filters, sort="_score", sortDir="desc"):
                         ],
                         "filter": filters
                     }
-                }
+                },
+                "boost_mode": "replace",
+                "score_mode": "avg",
+                "functions": [
+                    {
+                        "field_value_factor": {
+                            "field": "salesRankShortTerm",
+                            "factor": 1,
+                            "missing": 100000000,
+                            "modifier": "reciprocal"
+
+                        }
+                    },
+                    {
+                        "field_value_factor": {
+                            "field": "salesRankMediumTerm",
+                            "factor": 2,
+                            "missing": 100000000,
+                            "modifier": "reciprocal"
+
+                        }
+                    },
+                    {
+                        "field_value_factor": {
+                            "field": "salesRankLongTerm",
+                            "factor": 3,
+                            "missing": 100000000,
+                            "modifier": "reciprocal"
+
+                        }
+                    }
+                ]
             }
 
         },
