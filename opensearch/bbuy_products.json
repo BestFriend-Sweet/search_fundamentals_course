@@ -4,17 +4,6 @@
   },
   "mappings": {
     "properties": {
-      "_type": {
-        "type": "text",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
-      },
-      "doc": {
-        "properties": {
           "accessories": {
             "type": "text",
             "fields": {
@@ -367,7 +356,5 @@
             }
           }
         }
-      }
-    }
   }
 }
