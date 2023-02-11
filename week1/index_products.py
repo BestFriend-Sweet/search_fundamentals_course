@@ -120,7 +120,7 @@ def index_file(file, index_name):
             '_op_type': 'index',
             '_index': index_name,
             '_type': 'document',
-            '_id': doc["productId"],
+            '_id': doc["productId"][0],
             'doc': doc
         }
         docs.append(the_doc)
