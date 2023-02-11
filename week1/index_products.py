@@ -123,12 +123,12 @@ def index_file(file, index_name):
         }
         docs.append(the_doc)
         if len(docs) == 2000:
-            bulk(client=client, actions=docs)
+            bulk(client=client, actions=docs, request_timeout=100)
             docs = []
             docs_indexed += len(docs)
     if len(docs) > 0:
         # In case of not mult of 2K and end of for
-        bulk(client=client, actions=docs)
+        bulk(client=client, actions=docs, request_timeout=100)
         docs_indexed += len(docs)
 
     return docs_indexed
